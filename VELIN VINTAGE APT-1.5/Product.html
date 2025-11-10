@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail - VELIN VINTAGE</title>
+    <link rel="icon" href="./assets/images/products/LOGO.png">
+    <link rel="stylesheet" href="./css/product.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="top-banner">
+            FREE SHIPPING ON ORDERS OVER $200 | NEW ARRIVALS DAILY
+        </div>
+        <nav>
+            <div class="logo" onclick="window.location.href='main.html'">VELIN VINTAGE</div>
+            <ul class="nav-links">
+                <li><a href="main.html#new">NEW IN</a></li>
+                <li><a href="main.html#brands">BRANDS</a></li>
+                <li><a href="LookBook.html">LOOK BOOK</a></li>
+                <li><a href="main.html#market">MARKET</a></li>
+                <li><a href="main.html#about">ABOUT</a></li>
+            </ul>
+            <div class="nav-icons">
+                <span onclick="typeof toggleSearch === 'function' ? toggleSearch() : null">SEARCH</span>
+                <span id="profileBtn" class="profile-btn" style="display:none;"
+                    onclick="window.location.href='profile.html'">PROFILE</span>
+                <span onclick="window.location.href='cart.html'">
+                    CART
+                    <span class="cart-badge" id="cartCount">0</span>
+                </span>
+                <span id="logoutBtn" class="logout-btn" style="display:none;">LOGOUT</span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Product Detail -->
+    <div class="product-detail">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <a href="main.html">HOME</a> / <a href="main.html#new">NEW ARRIVALS</a> / <span
+                id="breadcrumb-product">PRODUCT</span>
+        </div>
+
+        <!-- Product Main Section -->
+        <div class="product-main">
+            <!-- Gallery -->
+            <div class="product-gallery">
+                <div class="main-image" id="mainImage">
+                    PRODUCT IMAGE
+                </div>
+                <div class="thumbnail-grid">
+                    <div class="thumbnail" onclick="changeMainImage(0)">
+                        <img id="thumb0" src="" alt="View 1"
+                            style="width: 100%; height: 100%; object-fit: cover; display: none;">
+                        <span class="thumb-placeholder">VIEW 1</span>
+                    </div>
+                    <div class="thumbnail" onclick="changeMainImage(1)">
+                        <img id="thumb1" src="" alt="View 2"
+                            style="width: 100%; height: 100%; object-fit: cover; display: none;">
+                        <span class="thumb-placeholder">VIEW 2</span>
+                    </div>
+                    <div class="thumbnail" onclick="changeMainImage(2)">
+                        <img id="thumb2" src="" alt="View 3"
+                            style="width: 100%; height: 100%; object-fit: cover; display: none;">
+                        <span class="thumb-placeholder">VIEW 3</span>
+                    </div>
+                    <div class="thumbnail" onclick="changeMainImage(3)">
+                        <img id="thumb3" src="" alt="View 4"
+                            style="width: 100%; height: 100%; object-fit: cover; display: none;">
+                        <span class="thumb-placeholder">VIEW 4</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Info -->
+            <div class="product-info-section">
+                <div class="product-badge-tag" id="badge">NEW</div>
+                <div class="product-brand-name" id="brand">CHROME HEARTS</div>
+                <h1 class="product-title" id="productName">Cross Patch Hoodie</h1>
+
+                <div class="product-rating">
+                    <span class="stars">★★★★★</span>
+                    <span>(4.8 / 237 reviews)</span>
+                </div>
+
+                <!-- Price Section -->
+                <div class="price-section">
+                    <div>
+                        <span class="original-price" id="originalPrice">$1,200</span>
+                        <span class="discount">-26%</span>
+                    </div>
+                    <div class="current-price" id="currentPrice">$890</div>
+
+                    <div class="price-trend-detail">
+                        <div class="trend-row">
+                            <span class="trend-label">Last Week</span>
+                            <span class="trend-value up">↑ $45 (5.3%)</span>
+                        </div>
+                        <div class="trend-row">
+                            <span class="trend-label">Last Month</span>
+                            <span class="trend-value up">↑ $120 (15.6%)</span>
+                        </div>
+                        <div class="trend-row">
+                            <span class="trend-label">Average Price</span>
+                            <span class="trend-value">$825</span>
+                        </div>
+                        <div class="trend-row">
+                            <span class="trend-label">Market Cap</span>
+                            <span class="trend-value">$2.4M</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Value Index -->
+                <div class="value-index">
+                    <h3>INVESTMENT VALUE INDEX</h3>
+                    <div class="index-score">
+                        <span class="score-number">8.7</span>
+                        <span class="score-label">/ 10</span>
+                    </div>
+                    <div class="index-breakdown">
+                        <div class="index-item">
+                            <span class="index-item-label">Rarity</span>
+                            <span class="index-item-value">9.2</span>
+                        </div>
+                        <div class="index-item">
+                            <span class="index-item-label">Demand</span>
+                            <span class="index-item-value">8.8</span>
+                        </div>
+                        <div class="index-item">
+                            <span class="index-item-label">Brand Power</span>
+                            <span class="index-item-value">9.5</span>
+                        </div>
+                        <div class="index-item">
+                            <span class="index-item-label">Condition</span>
+                            <span class="index-item-value">7.5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Options -->
+                <div class="product-options">
+                    <div class="option-group">
+                        <div class="option-label">SIZE</div>
+                        <div class="option-buttons">
+                            <button class="option-btn">S</button>
+                            <button class="option-btn selected">M</button>
+                            <button class="option-btn">L</button>
+                            <button class="option-btn">XL</button>
+                        </div>
+                    </div>
+                    <div class="option-group">
+                        <div class="option-label">CONDITION</div>
+                        <div class="option-buttons">
+                            <button class="option-btn selected">NEW</button>
+                            <button class="option-btn">LIKE NEW</button>
+                            <button class="option-btn">GOOD</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button class="btn-primary" onclick="addToCart()">ADD TO CART</button>
+                    <button class="btn-secondary" onclick="addToWishlist()">ADD TO WISHLIST</button>
+                </div>
+
+                <!-- Product Details -->
+                <div class="product-details">
+                    <div class="details-tabs">
+                        <div class="tab active" onclick="switchTab(0)">DETAILS</div>
+                        <div class="tab" onclick="switchTab(1)">SHIPPING</div>
+                        <div class="tab" onclick="switchTab(2)">RETURNS</div>
+                    </div>
+                    <div class="tab-content active">
+                        <div class="detail-row">
+                            <span class="detail-label">Release Date</span>
+                            <span class="detail-value">Fall 2024</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Material</span>
+                            <span class="detail-value">100% Cotton</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Made In</span>
+                            <span class="detail-value">USA</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Product Code</span>
+                            <span class="detail-value">CH-H-2024-001</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Limited Edition</span>
+                            <span class="detail-value">50 pieces</span>
+                        </div>
+                    </div>
+                    <div class="tab-content">
+                        <p style="color: #888; line-height: 1.8;">
+                            Free shipping on orders over $200. Standard shipping takes 3-5 business days.
+                            Express shipping available at checkout. International shipping available to select
+                            countries.
+                        </p>
+                    </div>
+                    <div class="tab-content">
+                        <p style="color: #888; line-height: 1.8;">
+                            30-day return policy. Items must be in original condition with tags attached.
+                            Authenticity guaranteed. Return shipping costs may apply.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Price Chart -->
+        <div class="chart-section">
+            <h2>PRICE HISTORY</h2>
+            <div class="chart-controls">
+                <button class="chart-btn" onclick="changeChartPeriod('1W')">1W</button>
+                <button class="chart-btn active" onclick="changeChartPeriod('1M')">1M</button>
+                <button class="chart-btn" onclick="changeChartPeriod('3M')">3M</button>
+                <button class="chart-btn" onclick="changeChartPeriod('6M')">6M</button>
+                <button class="chart-btn" onclick="changeChartPeriod('1Y')">1Y</button>
+                <button class="chart-btn" onclick="changeChartPeriod('ALL')">ALL</button>
+            </div>
+            <div class="chart-container">
+                <canvas id="priceChart" class="chart-canvas"></canvas>
+            </div>
+        </div>
+
+        <!-- Similar Products -->
+        <div class="similar-products">
+            <h2 class="section-title">SIMILAR PRODUCTS</h2>
+            <div class="similar-grid" id="similarGrid"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>ABOUT</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>SUPPORT</h3>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>POLICIES</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>FOLLOW US</h3>
+                <div class="social-links">
+                    <a target="_blank" href="https://www.instagram.com/wizzy._studio/">INSTAGRAM</a>
+                    <a href="#">TWITTER</a>
+                    <a href="#">TIKTOK</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 VELIN VINTAGE. ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
+    <!-- SEARCH PANEL & OVERLAY -->
+    <div id="searchOverlay" class="search-overlay"></div>
+    <div id="searchPanel" class="search-panel" aria-hidden="true">
+        <button class="close-btn" aria-label="Close search">✕</button>
+        <h2>Search</h2>
+        <input id="searchInput" type="search" placeholder="상품명, 브랜드, 카테고리로 검색하세요" aria-label="Search">
+        <div id="searchResults" class="search-results"></div>
+    </div>
+
+</body>
+<script src="./script.js/Product.js"></script>
+
+</html>

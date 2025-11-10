@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VELIN VINTAGE LOOKBOOK</title>
+    <link rel="icon" href="./assets/images/products/LOGO.png">
+    <link rel="stylesheet" href="./css/lookbook.css">
+</head>
+
+<body>
+    <header id="header">
+        <div class="top-banner">
+            FREE SHIPPING ON ORDERS OVER $200 | NEW ARRIVALS DAILY
+        </div>
+        <nav>
+            <div class="logo" onclick="window.location.href='main.html'">VELIN VINTAGE</div>
+            <ul class="nav-links">
+                <li><a href="main.html#new">NEW IN</a></li>
+                <li><a href="main.html#brands">BRANDS</a></li>
+                <li><a href="LookBook.html">LOOK BOOK</a></li>
+                <li><a href="main.html#market">MARKET</a></li>
+                <li><a href="main.html#about">ABOUT</a></li>
+            </ul>
+            <div class="nav-icons">
+                <span onclick="typeof toggleSearch === 'function' ? toggleSearch() : null">SEARCH</span>
+                <span id="profileBtn" class="profile-btn" style="display:none;"
+                    onclick="window.location.href='profile.html'">PROFILE</span>
+                <span onclick="window.location.href='cart.html'">
+                    CART
+                    <span class="cart-badge" id="cartCount">0</span>
+                </span>
+                <span id="logoutBtn" class="logout-btn" style="display:none;">LOGOUT</span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="lookbook-section">
+        <h2 class="section-title">LOOKBOOK 2025</h2>
+        <div class="lookbook-grid" id="lookbookGrid"></div>
+    </section>
+
+    <!-- SEARCH PANEL & OVERLAY -->
+    <div id="searchOverlay" class="search-overlay"></div>
+    <div id="searchPanel" class="search-panel" aria-hidden="true">
+        <button class="close-btn" aria-label="Close search">✕</button>
+        <h2>Search</h2>
+        <input id="searchInput" type="search" placeholder="상품명, 브랜드, 카테고리로 검색하세요" aria-label="Search">
+        <div id="searchResults" class="search-results"></div>
+    </div>
+
+</body>
+<script src="./script.js/LookBook.js"></script>
+
+</html>

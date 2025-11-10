@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - VELIN VINTAGE</title>
+    <link rel="icon" href="./assets/images/products/LOGO.png">
+    <link rel="stylesheet" href="./css/cart.css">
+</head>
+
+<body>
+    <div class="bg-animation"></div>
+    <div class="login-container">
+        <div class="login-box">
+            <div class="logo-section">
+                <div class="logo-text">VELIN VINTAGE</div>
+                <div class="logo-subtitle">PREMIUM STREETWEAR</div>
+            </div>
+            <div class="form-title">Login</div>
+            <div class="form-subtitle">Enter your credentials to access your account.</div>
+            <div id="alertError" class="alert error"></div>
+            <div id="alertSuccess" class="alert success"></div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email" class="form-label required">Email or Username</label>
+                    <input type="text" id="email" class="form-input" placeholder="Enter your email or username">
+                    <div class="error-message">Please enter a valid email or username</div>
+                </div>
+                <div class="form-group password-toggle">
+                    <label for="password" class="form-label required">Password</label>
+                    <input type="password" id="password" class="form-input" placeholder="Enter your password">
+                    <button type="button" class="toggle-btn" onclick="togglePassword()">SHOW</button>
+                    <div class="error-message">Please enter your password</div>
+                </div>
+                <button type="submit" id="loginBtn" class="btn-login">LOGIN</button>
+                <!-- <button type="button" id="forgotBtn" class="btn-forgot" onclick="handleForgotPassword(event)">FORGOT
+                    PASSWORD?</button> -->
+            </form>
+            <div class="signup-link">Don't have an account? <a href="signup.html">Sign up</a></div>
+        </div>
+    </div>
+</body>
+<script src="./script.js/login.js"></script>
+
+</html>

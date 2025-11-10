@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - VELIN VINTAGE</title>
+    <link rel="icon" href="./assets/images/products/LOGO.png">
+    <link rel="stylesheet" href="./css/profile.css">
+</head>
+
+<body>
+    <header id="header">
+        <div class="top-banner">
+            FREE SHIPPING ON ORDERS OVER $200 | NEW ARRIVALS DAILY
+        </div>
+        <nav>
+            <div class="logo" onclick="window.location.href='main.html'">VELIN VINTAGE</div>
+            <ul class="nav-links">
+                <li><a href="main.html#new">NEW IN</a></li>
+                <li><a href="main.html#brands">BRANDS</a></li>
+                <li><a href="LookBook.html">LOOK BOOK</a></li>
+                <li><a href="main.html#market">MARKET</a></li>
+                <li><a href="main.html#about">ABOUT</a></li>
+            </ul>
+            <div class="nav-icons">
+                <span onclick="typeof toggleSearch === 'function' ? toggleSearch() : null">SEARCH</span>
+                <span id="profileBtn" class="profile-btn" style="display:none;"
+                    onclick="window.location.href='profile.html'">PROFILE</span>
+                <span onclick="window.location.href='cart.html'">
+                    CART
+                    <span class="cart-badge" id="cartCount">0</span>
+                </span>
+                <span id="logoutBtn" class="logout-btn" style="display:none;">LOGOUT</span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="profile-container">
+        <div class="profile-header">
+            <div class="profile-avatar" id="avatarLetter">U</div>
+            <div class="profile-info">
+                <div class="profile-name" id="profileName"></div>
+                <div class="profile-email" id="profileEmail"></div>
+                <div class="profile-joined" id="profileJoined"></div>
+            </div>
+            <button class="edit-profile-btn" onclick="openEditModal()">EDIT PROFILE</button>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value" id="collectionCount">0</div>
+                <div class="stat-label">ITEMS IN COLLECTION</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="wishlistCount">0</div>
+                <div class="stat-label">WISHLIST ITEMS</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="totalValue">$0</div>
+                <div class="stat-label">COLLECTION VALUE</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="totalGain">+$0</div>
+                <div class="stat-label">TOTAL GAIN</div>
+            </div>
+        </div>
+
+        <div class="profile-tabs">
+            <button class="tab-btn active" onclick="showTab('collection')">MY COLLECTION</button>
+            <button class="tab-btn" onclick="showTab('wishlist')">WISHLIST</button>
+            <button class="tab-btn" onclick="showTab('orders')">ORDER HISTORY</button>
+        </div>
+
+        <div id="collectionTab" class="tab-content active">
+            <div class="products-grid" id="collectionGrid"></div>
+        </div>
+
+        <div id="wishlistTab" class="tab-content">
+            <div class="products-grid" id="wishlistGrid"></div>
+        </div>
+
+        <div id="ordersTab" class="tab-content">
+            <div class="empty-state">
+                <div class="empty-state-icon">📦</div>
+                <div class="empty-state-title">No Orders Yet</div>
+                <div class="empty-state-text">Your order history will appear here</div>
+                <a href="main.html#new" class="btn-browse">START SHOPPING</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Profile Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">Edit Profile</div>
+                <button class="modal-close" onclick="closeEditModal()">×</button>
+            </div>
+            <form id="editForm" onsubmit="saveProfile(event)">
+                <div class="form-group">
+                    <label class="form-label">FIRST NAME</label>
+                    <input type="text" id="editFirstName" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">LAST NAME</label>
+                    <input type="text" id="editLastName" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">EMAIL</label>
+                    <input type="email" id="editEmail" class="form-input" disabled>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">PHONE NUMBER</label>
+                    <input type="tel" id="editPhone" class="form-input">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">USERNAME</label>
+                    <input type="text" id="editUsername" class="form-input">
+                </div>
+                <button type="submit" class="btn-save">SAVE CHANGES</button>
+            </form>
+        </div>
+    </div>
+    <!-- SEARCH PANEL & OVERLAY -->
+    <div id="searchOverlay" class="search-overlay"></div>
+    <div id="searchPanel" class="search-panel" aria-hidden="true">
+        <button class="close-btn" aria-label="Close search">✕</button>
+        <h2>Search</h2>
+        <input id="searchInput" type="search" placeholder="상품명, 브랜드, 카테고리로 검색하세요" aria-label="Search">
+        <div id="searchResults" class="search-results"></div>
+    </div>
+</body>
+<script src="./script.js/profile.js"></script>
+
+</html>

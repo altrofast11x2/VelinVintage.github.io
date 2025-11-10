@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VELIN VINTAGE - Premium Streetwear</title>
+    <link rel="icon" href="./assets/images/products/LOGO.png">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <header id="header">
+        <div class="top-banner">
+            FREE SHIPPING ON ORDERS OVER $200 | NEW ARRIVALS DAILY
+        </div>
+        <nav>
+            <div class="logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">VELIN VINTAGE</div>
+            <ul class="nav-links">
+                <li><a href="#new">NEW IN</a></li>
+                <li><a href="#brands">BRANDS</a></li>
+                <li><a href="LookBook.html">LOOK BOOK</a></li>
+                <li><a href="#market">MARKET</a></li>
+                <li><a href="#about">ABOUT</a></li>
+            </ul>
+            <div class="nav-icons">
+                <span onclick="typeof toggleSearch === 'function' ? toggleSearch() : null">SEARCH</span>
+                <span id="profileBtn" class="profile-btn" style="display:none;"
+                    onclick="window.location.href='profile.html'">PROFILE</span>
+                <span onclick="window.location.href='cart.html'">
+                    CART
+                    <span class="cart-badge" id="cartCount">0</span>
+                </span>
+                <span id="logoutBtn" class="logout-btn" style="display:none;">LOGOUT</span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>VINTAGE CULTURE</h1>
+            <p>EXCLUSIVE STREETWEAR COLLECTION 2025</p>
+            <a href="#new" class="cta-button">SHOP NOW</a>
+        </div>
+    </section>
+
+    <section class="market-section" id="market">
+        <h2 class="section-title">MARKET TRENDS</h2>
+        <div class="market-grid" id="marketGrid"></div>
+    </section>
+
+    <section class="announcement-section">
+        <div class="announcement-slider">
+            <div class="announcement-track">
+                <div class="announcement-item">
+                    <h4>🔥 NEW DROP</h4>
+                    <p>Chrome Hearts Forever Collection - Limited 50 Pieces</p>
+                </div>
+                <div class="announcement-item">
+                    <h4>📈 TRENDING</h4>
+                    <p>BAPE 1st Camo prices up 15% this month</p>
+                </div>
+                <div class="announcement-item">
+                    <h4>⚡ FLASH SALE</h4>
+                    <p>Supreme accessories 30% OFF - 24H only</p>
+                </div>
+                <div class="announcement-item">
+                    <h4>🎯 INVESTMENT TIP</h4>
+                    <p>Fear of God Essentials showing strong growth</p>
+                </div>
+                <div class="announcement-item">
+                    <h4>🔥 NEW DROP</h4>
+                    <p>Chrome Hearts Forever Collection - Limited 50 Pieces</p>
+                </div>
+                <div class="announcement-item">
+                    <h4>📈 TRENDING</h4>
+                    <p>BAPE 1st Camo prices up 15% this month</p>
+                </div>
+                <div class="announcement-item">
+                    <h4>⚡ FLASH SALE</h4>
+                    <p>Supreme accessories 30% OFF - 24H only</p>
+                </div>
+                <div class="announcement-item">
+                    <h4>🎯 INVESTMENT TIP</h4>
+                    <p>Fear of God Essentials showing strong growth</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="brands-section" id="brands">
+        <h2 class="section-title">FEATURED BRANDS</h2>
+        <div class="brands-grid">
+            <div class="brand-card">
+                <div class="brand-logo">CHROME HEARTS</div>
+                <div class="brand-desc">LUXURY SILVER</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-logo">BAPE®</div>
+                <div class="brand-desc">APE SHALL NEVER KILL APE</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-logo">STÜSSY</div>
+                <div class="brand-desc">SINCE 1980</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-logo">SUPREME</div>
+                <div class="brand-desc">NYC</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-logo">OFF-WHITE</div>
+                <div class="brand-desc">VIRGIL ABLOH</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-logo">FEAR OF GOD</div>
+                <div class="brand-desc">ESSENTIALS</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-logo">PALM ANGELS</div>
+                <div class="brand-desc">LA FASHION</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-logo">NEEDLES</div>
+                <div class="brand-desc">REBUILD SERIES</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products-section" id="new">
+        <h2 class="section-title">NEW ARRIVALS</h2>
+        <div class="products-filter">
+            <button class="filter-btn active">ALL</button>
+            <button class="filter-btn">TOPS</button>
+            <button class="filter-btn">BOTTOMS</button>
+            <button class="filter-btn">OUTERWEAR</button>
+            <button class="filter-btn">ACCESSORIES</button>
+            <button class="filter-btn">FOOTWEAR</button>
+        </div>
+        <div class="products-grid" id="productsGrid"></div>
+    </section>
+
+    <section class="newsletter-section" id="about">
+        <div class="newsletter-content">
+            <h2>SUBSCRIBE TO OUR NEWSLETTER</h2>
+            <p>GET EXCLUSIVE DROPS & EARLY ACCESS</p>
+            <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+                <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+                <button type="submit" class="newsletter-submit">SUBSCRIBE</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>ABOUT</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>SUPPORT</h3>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>POLICIES</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Cookies</a></li>
+                    <li><a href="#">Accessibility</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>FOLLOW US</h3>
+                <div class="social-links">
+                    <a target="_blank" href="https://www.instagram.com/wizzy._studio/">INSTAGRAM</a>
+                    <a href="#">TWITTER</a>
+                    <a href="#">FACEBOOK</a>
+                    <a href="#">TIKTOK</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 VELIN VINTAGE. ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
+
+    <!-- SEARCH PANEL & OVERLAY -->
+    <div id="searchOverlay" class="search-overlay"></div>
+    <div id="searchPanel" class="search-panel" aria-hidden="true">
+        <button class="close-btn" aria-label="Close search">✕</button>
+        <h2>Search</h2>
+        <input id="searchInput" type="search" placeholder="상품명, 브랜드, 카테고리로 검색하세요" aria-label="Search">
+        <div id="searchResults" class="search-results"></div>
+    </div>
+
+</body>
+<script src="./script.js/main.js"></script>
+
+</html>

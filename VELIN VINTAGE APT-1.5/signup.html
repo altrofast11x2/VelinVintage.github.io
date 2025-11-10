@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - VELIN VINTAGE</title>
+    <link rel="icon" href="./assets/images/products/LOGO.png">
+    <link rel="stylesheet" href="./css/signup.css">
+</head>
+
+<body>
+    <div class="bg-animation"></div>
+    <div class="signup-container">
+        <div class="signup-box">
+            <div class="logo-section">
+                <div class="logo-text">VELIN VINTAGE</div>
+                <div class="logo-subtitle">PREMIUM STREETWEAR</div>
+            </div>
+            <div class="form-title">Sign Up</div>
+            <div class="form-subtitle">Create your account to start shopping.</div>
+            <div id="alertError" class="alert error"></div>
+            <div id="alertSuccess" class="alert success"></div>
+            <form id="signupForm" onsubmit="handleSignup(event)">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="firstName" class="form-label required">First Name</label>
+                        <input type="text" id="firstName" class="form-input" placeholder="Enter your first name">
+                        <div class="error-message">Please enter your first name</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName" class="form-label required">Last Name</label>
+                        <input type="text" id="lastName" class="form-input" placeholder="Enter your last name">
+                        <div class="error-message">Please enter your last name</div>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="email" class="form-label required">Email</label>
+                        <input type="email" id="email" class="form-input" placeholder="Enter your email">
+                        <div class="error-message">Please enter a valid email</div>
+                    </div>
+                    <div class="form-group full-width password-toggle">
+                        <label for="password" class="form-label required">Password</label>
+                        <input type="password" id="password" class="form-input" placeholder="Enter your password">
+                        <button type="button" class="toggle-btn" onclick="togglePassword('password')">SHOW</button>
+                        <div class="password-strength">
+                            <div class="strength-bar">
+                                <div class="strength-fill"></div>
+                            </div>
+                            <div class="strength-text"></div>
+                        </div>
+                        <div class="error-message">Password must be at least 8 characters</div>
+                    </div>
+                    <div class="form-group full-width password-toggle">
+                        <label for="confirmPassword" class="form-label required">Confirm Password</label>
+                        <input type="password" id="confirmPassword" class="form-input"
+                            placeholder="Confirm your password">
+                        <button type="button" class="toggle-btn"
+                            onclick="togglePassword('confirmPassword')">SHOW</button>
+                        <div class="error-message">Passwords do not match</div>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="phone" class="form-label">Phone Number</label>
+                        <input type="tel" id="phone" class="form-input"
+                            placeholder="Enter your phone number (optional)">
+                    </div>
+                </div>
+                <div class="checkbox-group">
+                    <label class="checkbox-item">
+                        <input type="checkbox" id="terms" required>
+                        I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" id="newsletter">
+                        Subscribe to our newsletter for updates
+                    </label>
+                </div>
+                <button type="submit" id="signupBtn" class="btn-signup">SIGN UP</button>
+            </form>
+            <div class="social-login">
+                <div class="social-title">OR SIGN UP WITH</div>
+                <div class="social-buttons">
+                    <div class="social-btn">G</div>
+                    <div class="social-btn">F</div>
+                    <div class="social-btn">T</div>
+                </div>
+            </div>
+            <div class="login-link">Already have an account? <a href="login.html">Login</a></div>
+        </div>
+    </div>
+</body>
+<script src="./script.js/signup.js"></script>
+
+</html>
