@@ -1,4 +1,3 @@
-/* 기본 리셋 */
 * {
     margin: 0;
     padding: 0;
@@ -505,7 +504,6 @@ nav {
     }
 }
 
-/* --- 검색 슬라이드 패널 --- */
 .search-overlay {
     position: fixed;
     inset: 0;
@@ -632,4 +630,5 @@ nav {
 .search-empty {
     color: #888;
     padding: 12px 6px;
+
 }
