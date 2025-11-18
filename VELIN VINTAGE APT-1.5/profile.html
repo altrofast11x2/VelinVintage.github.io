@@ -131,6 +131,111 @@
         <div id="searchResults" class="search-results"></div>
     </div>
 </body>
+        <script>
+        function execDaumPostcode() {
+            new daum.Postcode({
+                oncomplete: function (data) {
+                    document.getElementById('editPostcode').value = data.zonecode;
+                    document.getElementById('editAddress').value = data.address;
+                    document.getElementById('editAddressDetail').focus();
+                }
+            }).open();
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const cardInput = document.getElementById('editCardNumber');
+            cardInput.addEventListener('input', function (e) {
+                let v = e.target.value.replace(/\s/g, '').replace(/[^0-9]/gi, '');
+                let parts = [];
+                for (let i = 0; i < v.length; i += 4) {
+                    parts.push(v.substring(i, i + 4));
+                }
+                e.target.value = parts.join(' ');
+            });
+        });
+
+        function addCard() {
+            const input = document.getElementById('editCardNumber');
+            let num = input.value.replace(/\s/g, '');
+            if (num.length !== 16) {
+                showNotification('카드번호 16자리를 입력해주세요');
+                return;
+            }
+            if (!window.VELIN.currentUser.cards) window.VELIN.currentUser.cards = [];
+            if (window.VELIN.currentUser.cards.includes(num)) {
+                showNotification('이미 등록된 카드입니다');
+                return;
+            }
+            window.VELIN.currentUser.cards.push(num);
+            updateUserData();
+            renderSavedCards();
+            input.value = '';
+            showNotification('카드가 등록되었습니다');
+        }
+
+        function renderSavedCards() {
+            const list = document.getElementById('savedCardsList');
+            const cards = window.VELIN.currentUser.cards || [];
+            if (cards.length === 0) {
+                list.innerHTML = '<div style="color:#666; padding:15px 0; font-size:14px;">등록된 카드가 없습니다</div>';
+                return;
+            }
+            list.innerHTML = cards.map((card, i) => {
+                const last4 = card.slice(-4);
+                const brand = /^4/.test(card) ? 'VISA' : /^5[1-5]/.test(card) ? 'MasterCard' : 'Card';
+                return `
+                    <div style="display:flex; justify-content:space-between; align-items:center; padding:15px; background:#0a0a0a; border:1px solid #333; border-radius:8px; margin-bottom:10px;">
+                        <div>
+                            <strong>${brand}</strong> •••• ${last4}
+                            <div style="font-size:12px; color:#888; margin-top:4px;">•••• •••• •••• ${last4}</div>
+                        </div>
+                        <button type="button" onclick="removeCard(${i})" style="background:none; border:none; color:#f87171; font-size:24px; cursor:pointer;">×</button>
+                    </div>`;
+            }).join('');
+        }
+
+        function removeCard(i) {
+            window.VELIN.currentUser.cards.splice(i, 1);
+            updateUserData();
+            renderSavedCards();
+            showNotification('카드가 삭제되었습니다');
+        }
+
+        function openEditModal() {
+            const u = window.VELIN.currentUser;
+            document.getElementById('editFirstName').value = u.firstName || '';
+            document.getElementById('editLastName').value = u.lastName || '';
+            document.getElementById('editEmail').value = u.email || '';
+            document.getElementById('editPhone').value = u.phone || '';
+            document.getElementById('editUsername').value = u.username || '';
+            if (u.address) {
+                document.getElementById('editPostcode').value = u.address.postcode || '';
+                document.getElementById('editAddress').value = u.address.address || '';
+                document.getElementById('editAddressDetail').value = u.address.detail || '';
+            }
+            renderSavedCards();
+            document.getElementById('editModal').classList.add('active');
+        }
+
+        function saveProfile(e) {
+            e.preventDefault();
+            const u = window.VELIN.currentUser;
+            u.firstName = document.getElementById('editFirstName').value.trim();
+            u.lastName = document.getElementById('editLastName').value.trim();
+            u.phone = document.getElementById('editPhone').value.trim();
+            u.username = document.getElementById('editUsername').value.trim();
+            u.address = {
+                postcode: document.getElementById('editPostcode').value,
+                address: document.getElementById('editAddress').value,
+                detail: document.getElementById('editAddressDetail').value
+            };
+            updateUserData();
+            loadProfile();
+            closeEditModal();
+            showNotification('프로필이 저장되었습니다!');
+        }
+    </script>
 <script src="./script.js/profile.js"></script>
+
 
 </html>
