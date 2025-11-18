@@ -395,7 +395,6 @@ nav {
     border: 2px solid #fff;
 }
 
-/* Edit Profile Modal */
 .modal {
     display: none;
     position: fixed;
@@ -682,4 +681,5 @@ nav {
 .search-empty {
     color: #888;
     padding: 12px 6px;
+
 }
