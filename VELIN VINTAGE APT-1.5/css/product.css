@@ -15,7 +15,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Header */
 header {
     position: fixed;
     top: 0;
@@ -150,7 +149,6 @@ nav {
     color: #888;
 }
 
-/* Product Detail Container */
 .product-detail {
     margin-top: 140px;
     padding: 60px;
@@ -345,7 +343,6 @@ nav {
     color: #f87171;
 }
 
-/* Value Index */
 .value-index {
     background: #111;
     padding: 30px;
@@ -397,7 +394,6 @@ nav {
     font-weight: 700;
 }
 
-/* Product Options */
 .product-options {
     margin-bottom: 30px;
 }
@@ -480,7 +476,6 @@ nav {
     color: #000;
 }
 
-/* Product Details */
 .product-details {
     background: #111;
     padding: 30px;
@@ -534,7 +529,6 @@ nav {
     font-weight: 600;
 }
 
-/* Price Chart */
 .chart-section {
     margin-top: 80px;
     background: #111;
@@ -589,7 +583,6 @@ nav {
     height: 100%;
 }
 
-/* Similar Products */
 .similar-products {
     margin-top: 80px;
 }
@@ -652,7 +645,6 @@ nav {
     font-weight: 900;
 }
 
-/* Footer */
 footer {
     background: #050505;
     padding: 80px 60px 30px;
@@ -719,7 +711,6 @@ footer {
     color: #fff;
 }
 
-/* Notification */
 .notification {
     position: fixed;
     bottom: 30px;
@@ -748,7 +739,6 @@ footer {
     }
 }
 
-/* --- 검색 슬라이드 패널 --- */
 .search-overlay {
     position: fixed;
     inset: 0;
@@ -875,4 +865,5 @@ footer {
 .search-empty {
     color: #888;
     padding: 12px 6px;
+
 }
